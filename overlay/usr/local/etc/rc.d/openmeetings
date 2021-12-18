@@ -1,0 +1,20 @@
+# cat openmeetings
+#!/bin/sh
+#
+# PROVIDE: openmeetings
+
+. /etc/rc.subr
+
+name="openmeetings"
+rcvar=openmeetings_enable
+
+DIR="/usr/local/openmeetings/bin"
+
+start_cmd="$DIR/startup.sh"
+stop_cmd="$DIR/shutdown.sh"
+
+load_rc_config $name
+
+export JRE_HOME="/usr/local"
+
+run_rc_command "$1"
