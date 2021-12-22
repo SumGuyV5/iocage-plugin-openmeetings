@@ -1,8 +1,6 @@
 #!/bin/sh -x
 IP_ADDRESS=$(ifconfig | grep -E 'inet.[0-9]' | grep -v '127.0.0.1' | awk '{ print $2}')
 
-fetch https://dlcdn.apache.org/openmeetings/6.2.0/bin/apache-openmeetings-6.2.0.zip
-
 cd /usr/local
 fetch https://dlcdn.apache.org/openmeetings/6.2.0/bin/apache-openmeetings-6.2.0.zip
 unzip apache-openmeetings-6.2.0.zip
